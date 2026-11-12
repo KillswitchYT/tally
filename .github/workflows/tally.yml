@@ -49,6 +49,14 @@ jobs:
           chmod +x gradlew
           ./gradlew assembleRelease --no-daemon --stacktrace 2>&1 | tee "$GITHUB_WORKSPACE/build.log"
 
+      # The smoke test (job below) installs exactly this file on an emulator.
+      - name: Keep the APK for the smoke test
+        uses: actions/upload-artifact@v4
+        with:
+          name: tally-apk
+          path: tally/app/build/outputs/apk/release/app-release.apk
+          if-no-files-found: warn
+
       - name: Publish the APK as a release
         if: success()
         env:
@@ -89,3 +97,55 @@ jobs:
           git add .
           git commit -qm "logs for run $GITHUB_RUN_ID"
           git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" build-logs
+
+  # Boots Android 14 in CI, installs the APK, opens it, taps through the tabs and starts its service. An emulator is not a Samsung phone.
+  smoke:
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: tally-apk
+          path: apk
+
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - name: Smoke test on an emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          target: google_apis
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          script: timeout 900 bash tools/ci/smoke-tally.sh apk/app-release.apk com.killswitch.tally
+
+      - name: Show the result on the run page
+        if: always()
+        run: |
+          {
+            echo "### Smoke test"
+            echo '```'
+            cat ring-result.txt 2>/dev/null || echo "the smoke test did not run"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Publish the smoke result to branch build-logs
+        if: always()
+        run: |
+          URL="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          git clone -q --depth 1 --branch build-logs "$URL" /tmp/bl || { mkdir -p /tmp/bl; git -C /tmp/bl init -q -b build-logs; }
+          cp ring-result.txt /tmp/bl/ 2>/dev/null || echo "the smoke test did not run" > /tmp/bl/ring-result.txt
+          cp smoke-test.log /tmp/bl/ 2>/dev/null || true
+          rm -rf /tmp/bl/smoke; mkdir -p /tmp/bl/smoke; cp smoke/*.png /tmp/bl/smoke/ 2>/dev/null || true
+          cd /tmp/bl
+          git config user.name "ci"; git config user.email "ci@users.noreply.github.com"
+          git add -A; git commit -qm "smoke result for run $GITHUB_RUN_ID" || true
+          git push -f "$URL" HEAD:build-logs
