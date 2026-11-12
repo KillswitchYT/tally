@@ -1,0 +1,158 @@
+name: Custom build
+run-name: build ${{ inputs.build_id }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      build_id:
+        description: Build id (3 to 40 chars, lowercase letters, digits, dashes)
+        required: true
+        type: string
+      package:
+        description: Package id of the generated app
+        required: true
+        type: string
+      app_name:
+        description: Launcher name of the generated app
+        required: true
+        type: string
+      icon_path:
+        description: Icon file path on branch build-inputs (optional)
+        required: false
+        default: ""
+        type: string
+      icon_fit:
+        description: fill or fit
+        required: false
+        default: fill
+        type: choice
+        options:
+          - fill
+          - fit
+
+permissions:
+  contents: write
+
+concurrency:
+  group: custom-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch the icon branch
+        if: ${{ inputs.icon_path != '' }}
+        uses: actions/checkout@v4
+        with:
+          ref: build-inputs
+          path: inputs
+          persist-credentials: false
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Prepare Android SDK
+        continue-on-error: true
+        run: |
+          {
+            SDK="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
+            echo "SDK=$SDK  java=$(java -version 2>&1 | head -1)"
+            SM="$SDK/cmdline-tools/latest/bin/sdkmanager"
+            ls "$SM" || true
+            yes | "$SM" --licenses > /dev/null || yes | sudo env "PATH=$PATH" "JAVA_HOME=$JAVA_HOME" "$SM" --licenses > /dev/null || true
+            "$SM" "platforms;android-35" "build-tools;35.0.0" "ndk;29.0.13846066" || sudo env "PATH=$PATH" "JAVA_HOME=$JAVA_HOME" "$SM" "platforms;android-35" "build-tools;35.0.0" "ndk;29.0.13846066" || echo "sdkmanager could not install them, Gradle will try on its own"
+            echo "--- installed:"; ls "$SDK/platforms" "$SDK/build-tools" "$SDK/ndk" || true
+            echo "ANDROID_HOME=$SDK" >> "$GITHUB_ENV"
+          } 2>&1 | tee sdk.log
+
+      - name: Validate inputs, apply name and icon
+        env:
+          IN_BUILD_ID: ${{ inputs.build_id }}
+          IN_PACKAGE: ${{ inputs.package }}
+          IN_NAME: ${{ inputs.app_name }}
+          IN_ICON: ${{ inputs.icon_path != '' && format('inputs/{0}', inputs.icon_path) || '' }}
+          IN_FIT: ${{ inputs.icon_fit }}
+          ICON_ROOT: ${{ github.workspace }}/inputs
+          RES_DIR: container/app/src/main/res
+        run: |
+          set -o pipefail
+          python3 -m venv /tmp/v
+          /tmp/v/bin/pip install --quiet pillow
+          /tmp/v/bin/python tools/apply_custom.py 2>&1 | tee apply.log
+
+      - name: Build the container (release)
+        working-directory: container
+        run: |
+          set -o pipefail
+          chmod +x gradlew
+          ./gradlew :app:assembleRelease --no-daemon --stacktrace "-PcontainerId=$CONTAINER_ID" 2>&1 | tee "$GITHUB_WORKSPACE/build.log"
+
+      - name: Verify the APK matches what was asked
+        env:
+          IN_NAME: ${{ inputs.app_name }}
+        run: |
+          set -o pipefail
+          apk=$(find container/app/build/outputs/apk/release -name '*.apk' | head -1)
+          AAPT=$(ls "$ANDROID_HOME"/build-tools/*/aapt | sort -V | tail -1)
+          "$AAPT" dump badging "$apk" > verify.txt
+          python3 - <<'PY'
+          import os, re, sys
+          t = open("verify.txt", encoding="utf-8", errors="replace").read()
+          pkg = re.search(r"^package: name='([^']*)'", t, re.M).group(1)
+          label = re.search(r"^application-label:'([^']*)'", t, re.M).group(1)
+          want_pkg, want_name = os.environ["CONTAINER_ID"], os.environ["IN_NAME"].strip()
+          print("package:", pkg, "| wanted:", want_pkg)
+          print("label:  ", label, "| wanted:", want_name)
+          print("icon lines:", [l for l in t.splitlines() if l.startswith("application-icon") or l.startswith("application:")][:6])
+          if pkg != want_pkg or label != want_name:
+              print("MISMATCH"); sys.exit(1)
+          print("MATCH")
+          PY
+          cp "$apk" app.apk
+          ls -l app.apk
+
+      - name: Publish the APK as a release
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          REPO="${{ github.repository }}"
+          gh release delete "out-$BUILD_ID" --cleanup-tag -y --repo "$REPO" 2>/dev/null || true
+          gh release create "out-$BUILD_ID" app.apk --repo "$REPO" --target "$GITHUB_SHA" --prerelease \
+            --title "Build $BUILD_ID" --notes "package $CONTAINER_ID, commit ${GITHUB_SHA::7}"
+          # keep only the newest 6 custom builds
+          gh release list --repo "$REPO" --limit 100 --json tagName,createdAt \
+            -q '[.[] | select(.tagName | startswith("out-"))] | sort_by(.createdAt) | reverse | .[6:] | .[].tagName' \
+            | while read -r t; do gh release delete "$t" --cleanup-tag -y --repo "$REPO" || true; done
+
+      - name: Show errors on the run page
+        if: always()
+        run: |
+          {
+            echo "### Errors"
+            echo '```'
+            cat apply.log sdk.log build.log verify.txt 2>/dev/null | grep -E '^e: |INPUT ERROR|MISMATCH|^FAILURE|What went wrong|error:|failed|Failed' | head -60 || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Publish the logs to branch build-logs-custom
+        if: always()
+        run: |
+          mkdir -p /tmp/out
+          for f in apply.log sdk.log build.log verify.txt; do cp "$f" /tmp/out/ 2>/dev/null || echo "no $f" > "/tmp/out/$f"; done
+          { cat /tmp/out/apply.log /tmp/out/sdk.log /tmp/out/build.log | grep -E '^e: |INPUT ERROR|What went wrong|error:|FAILURE|failed|Failed' | head -80 || true; } > /tmp/out/errors.txt
+          [ -s /tmp/out/errors.txt ] || echo "no errors found" > /tmp/out/errors.txt
+          echo "run $GITHUB_RUN_ID, commit $GITHUB_SHA" > /tmp/out/run.txt
+          cd /tmp/out
+          git init -q -b build-logs-custom
+          git config user.name "ci"
+          git config user.email "ci@users.noreply.github.com"
+          git add .
+          git commit -qm "logs for run $GITHUB_RUN_ID"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" build-logs-custom

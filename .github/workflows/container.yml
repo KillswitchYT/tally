@@ -1,15 +1,18 @@
-name: Build APK
+name: Test container (default Box)
 
 on:
   workflow_dispatch:
   push:
     branches: [main]
+    paths:
+      - "container/**"
+      - ".github/workflows/container.yml"
 
 permissions:
   contents: write
 
 concurrency:
-  group: build-${{ github.ref }}
+  group: container-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -24,7 +27,6 @@ jobs:
           distribution: temurin
           java-version: "21"
 
-      # The runner image ships an Android SDK. Accept licences and install what this project asks for (platform 35, build-tools 35, NDK 29).
       - name: Prepare Android SDK
         continue-on-error: true
         run: |
@@ -39,23 +41,24 @@ jobs:
             echo "ANDROID_HOME=$SDK" >> "$GITHUB_ENV"
           } 2>&1 | tee sdk.log
 
-      - name: Build the app (release)
+      - name: Build the container (release)
+        working-directory: container
         run: |
           set -o pipefail
           chmod +x gradlew
-          ./gradlew :app:assembleRelease --no-daemon --stacktrace 2>&1 | tee build.log
+          ./gradlew :app:assembleRelease --no-daemon --stacktrace 2>&1 | tee "$GITHUB_WORKSPACE/build.log"
 
       - name: Publish the APK as a release
         if: success()
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          apk=$(find app/build/outputs/apk/release -name '*.apk' | head -1)
+          apk=$(find container/app/build/outputs/apk/release -name '*.apk' | head -1)
           echo "apk: $apk"; ls -l "$apk"
-          cp "$apk" Tally.apk
-          gh release delete latest --cleanup-tag -y --repo "${{ github.repository }}" 2>/dev/null || true
-          gh release create latest Tally.apk --repo "${{ github.repository }}" --target "$GITHUB_SHA" --prerelease \
-            --title "Latest build" --notes "Built from commit ${GITHUB_SHA::7}. Signed with the fixed project key, so it updates over the previous build."
+          cp "$apk" Box.apk
+          gh release delete box-latest --cleanup-tag -y --repo "${{ github.repository }}" 2>/dev/null || true
+          gh release create box-latest Box.apk --repo "${{ github.repository }}" --target "$GITHUB_SHA" --prerelease \
+            --title "Test container (Box)" --notes "Default test container, package com.killswitch.box, commit ${GITHUB_SHA::7}. Signed with the fixed project key."
 
       - name: Show errors on the run page
         if: always()

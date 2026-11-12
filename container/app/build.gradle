@@ -9,7 +9,7 @@ android {
     compileSdk rootProject.ext.compileSdkVersion
     ndkVersion = "29.0.13846066"
     defaultConfig {
-        applicationId "com.killswitch.tally"
+        applicationId ((project.findProperty("containerId") ?: "com.killswitch.box").toString())
         minSdk rootProject.ext.minSdk
         targetSdk rootProject.ext.targetSdkVersion
         versionCode 100 + ((System.getenv("GITHUB_RUN_NUMBER") ?: "0") as int)
@@ -55,7 +55,7 @@ android {
     }
     applicationVariants.configureEach { variant ->
         variant.outputs.configureEach { output ->
-            output.outputFileName = "Tally.apk"
+            output.outputFileName = "Container.apk"
         }
     }
 }
