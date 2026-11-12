@@ -1,0 +1,44 @@
+pkg	com.me.app	ok
+pkg	com.killswitch.mygame	ok
+pkg	a.b	ok
+pkg	a1.b_2.c3	ok
+pkg		bad
+pkg	nodots	bad
+pkg	Com.Me.App	bad
+pkg	com..app	bad
+pkg	1com.app	bad
+pkg	com.me-app	bad
+pkg	com.me.app.	bad
+pkg	com.killswitch.tally	bad
+pkg	android.x.y	bad
+pkg	com.android.evil	bad
+pkg	com.google.android.x	bad
+pkg	com.samsung.x	bad
+pkg	com.sec.android.x	bad
+pkg	xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.y	bad
+pkg	com.a b.c	bad
+pkg	com.me.app\n	ok
+pkg	com.me.é	bad
+pkg	 com.me.app 	ok
+pkg	com.me.if	ok
+pkg	com.me.9a	bad
+name	My App	ok
+name	تطبيقي	ok
+name	A-b_c.d	ok
+name		bad
+name	   	bad
+name	xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	bad
+name	xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	ok
+name	a"b	bad
+name	<b>	bad
+name	$(x)	bad
+name	a/b	bad
+name	a;b	bad
+name	emoji 😀	bad
+name	  spaced  	ok
+name	tab\there	bad
+name	Ünïcode	ok
+name	日本語	ok
+name	a\nb	bad
+name	'single'	bad
+name	a&b	bad

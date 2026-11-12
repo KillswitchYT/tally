@@ -1,16 +1,17 @@
 # TESTING (on your phone, plain words)
 
-Nothing below is verified on a real device yet. Tell me what happens, screenshots help.
+Nothing here has run on a real phone yet. Tell me what happens, screenshots help.
+
+## Tally, the compiler (release "latest", file Tally.apk)
+1. Install Tally.apk. Does it open? Is the look right, light and dark (Setup, Appearance)?
+2. Setup, Token: paste your GitHub token, Save. Setup, Check connection: Repository found, Push access Yes, Build workflow Found.
+3. Build tab: type a name. The package id fills itself in. Pick an image. Try Fill and Fit. Build app.
+4. Leave Tally right away and use another app. Does a notification show the progress? About 5 minutes.
+5. Builds tab: when it says Saved in Downloads, tap Install. Does your new app show your name and icon on the home screen?
+6. Build again with the SAME package id and a changed name. Does it install over the first one without uninstalling?
+7. Bad input: a package id like com.android.x or Com.Test, a name with quotes. Does the form refuse it before building?
+8. Turn on airplane mode in the middle of a build, then off. Does it carry on by itself?
+9. Swipe Tally away from recents during a build, then open it again. Does the build still show up and finish?
 
 ## Test container Box (release "box-latest", file Box.apk)
-1. Install Box.apk. Does it install? Any Play Protect warning? (If you installed the old first APK named Tally, uninstall it first.)
-2. Open it. Does it start or crash?
-3. Add a simple app first (calculator, Files). Does it open inside Box?
-4. Add TikTok. Does it open, log in, play video, stay stable 5 minutes?
-5. Add Geometry Dash. Sound, frame rate OK?
-6. Settings, Digital Wellbeing: after 5 minutes in a guest app, which package shows the time?
-7. Compare speed with the normal installed app.
-
-## Custom build (after the compiler app exists)
-8. Build with your own name, icon, package. Does the home screen show your name and icon? Does the splash screen show your icon?
-9. Rebuild with the same package. Does the new APK install over the old one without uninstalling?
+10. Install Box.apk. Add a simple app, then TikTok, then Geometry Dash. Do they run inside it? Which package does Digital Wellbeing show?
