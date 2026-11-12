@@ -1,0 +1,85 @@
+name: Build APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      # The runner image ships an Android SDK. Accept licences and install what this project asks for (platform 35, build-tools 35, NDK 29).
+      - name: Prepare Android SDK
+        continue-on-error: true
+        run: |
+          {
+            SDK="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
+            echo "SDK=$SDK  java=$(java -version 2>&1 | head -1)"
+            SM="$SDK/cmdline-tools/latest/bin/sdkmanager"
+            ls "$SM" || true
+            yes | "$SM" --licenses > /dev/null || yes | sudo env "PATH=$PATH" "JAVA_HOME=$JAVA_HOME" "$SM" --licenses > /dev/null || true
+            "$SM" "platforms;android-35" "build-tools;35.0.0" "ndk;29.0.13846066" || sudo env "PATH=$PATH" "JAVA_HOME=$JAVA_HOME" "$SM" "platforms;android-35" "build-tools;35.0.0" "ndk;29.0.13846066" || echo "sdkmanager could not install them, Gradle will try on its own"
+            echo "--- installed:"; ls "$SDK/platforms" "$SDK/build-tools" "$SDK/ndk" || true
+            echo "ANDROID_HOME=$SDK" >> "$GITHUB_ENV"
+          } 2>&1 | tee sdk.log
+
+      - name: Build the app (release)
+        run: |
+          set -o pipefail
+          chmod +x gradlew
+          ./gradlew :app:assembleRelease --no-daemon --stacktrace 2>&1 | tee build.log
+
+      - name: Publish the APK as a release
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          apk=$(find app/build/outputs/apk/release -name '*.apk' | head -1)
+          echo "apk: $apk"; ls -l "$apk"
+          cp "$apk" Tally.apk
+          gh release delete latest --cleanup-tag -y --repo "${{ github.repository }}" 2>/dev/null || true
+          gh release create latest Tally.apk --repo "${{ github.repository }}" --target "$GITHUB_SHA" --prerelease \
+            --title "Latest build" --notes "Built from commit ${GITHUB_SHA::7}. Signed with the fixed project key, so it updates over the previous build."
+
+      - name: Show errors on the run page
+        if: always()
+        run: |
+          {
+            echo "### Errors"
+            echo '```'
+            cat sdk.log build.log 2>/dev/null | grep -E '^e: |^FAILURE|What went wrong|error:|failed|Failed' | head -60 || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Publish the logs to branch build-logs
+        if: always()
+        run: |
+          mkdir -p /tmp/out
+          cp build.log /tmp/out/build.log 2>/dev/null || echo "no build log was produced (build step did not run)" > /tmp/out/build.log
+          cp sdk.log /tmp/out/sdk.log 2>/dev/null || echo "no sdk log" > /tmp/out/sdk.log
+          { cat /tmp/out/sdk.log /tmp/out/build.log | grep -E '^e: |What went wrong|error:|FAILURE|failed|Failed' | head -80 || true; } > /tmp/out/errors.txt
+          [ -s /tmp/out/errors.txt ] || echo "no errors found" > /tmp/out/errors.txt
+          echo "run $GITHUB_RUN_ID, commit $GITHUB_SHA" > /tmp/out/run.txt
+          cd /tmp/out
+          git init -q -b build-logs
+          git config user.name "ci"
+          git config user.email "ci@users.noreply.github.com"
+          git add .
+          git commit -qm "logs for run $GITHUB_RUN_ID"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" build-logs

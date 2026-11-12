@@ -1,0 +1,3 @@
+Tally is built on BlackBox (https://github.com/ALEX5402/NewBlackbox), licensed under the Apache License 2.0 (see LICENSE).
+BlackBox itself derives from VirtualApp and other projects credited in its own README (kept below in UPSTREAM_README.md).
+Changes here: applicationId com.killswitch.tally, app name Tally, fixed project signing key, no ABI splits, R8 off, our CI.
