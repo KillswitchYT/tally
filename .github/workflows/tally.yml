@@ -143,7 +143,7 @@ jobs:
           URL="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
           git clone -q --depth 1 --branch build-logs "$URL" /tmp/bl || { mkdir -p /tmp/bl; git -C /tmp/bl init -q -b build-logs; }
           cp ring-result.txt /tmp/bl/ 2>/dev/null || echo "the smoke test did not run" > /tmp/bl/ring-result.txt
-          cp smoke-test.log /tmp/bl/ 2>/dev/null || true
+          for f in smoke-test.log smoke-diag.txt smoke-logcat.txt; do cp "$f" /tmp/bl/ 2>/dev/null || true; done
           rm -rf /tmp/bl/smoke; mkdir -p /tmp/bl/smoke; cp smoke/*.png /tmp/bl/smoke/ 2>/dev/null || true
           cd /tmp/bl
           git config user.name "ci"; git config user.email "ci@users.noreply.github.com"
