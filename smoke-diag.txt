@@ -1,0 +1,112 @@
+
+##### cpu before install
+Tasks: 318 total,   1 running, 317 sleeping,   0 stopped,   0 zombie
+  Mem:  2534552K total,  2417580K used,   116972K free,     6056K buffers
+ Swap:  1900908K total,   328960K used,  1571948K free,   958212K cached
+200%cpu  81%user  31%nice  65%sys  15%idle   4%iow   0%irq   4%sirq   0%host
+  PID USER         PR  NI VIRT  RES  SHR S[%CPU] %MEM     TIME+ ARGS
+  519 system       18  -2  15G 314M 215M S 61.5  12.7   0:15.62 system_server
+ 1635 u0_a125      20   0  14G 159M 112M S 42.3   6.4   0:01.41 com.google.android.as
+ 1416 u0_a131      20   0  14G 215M 160M S 34.6   8.6   0:03.17 com.google.android.gms.persistent
+ 4500 root         20   0  10G 4.8M 3.9M R  7.6   0.1   0:00.00 top -b -n 1 -m 8
+  118 root         20   0    0    0    0 I  7.6   0.0   0:00.15 [kworker/u4:2-ext4-rsv-conversion]
+ 1797 u0_a132      10 -10  31G 266M 198M S  3.8  10.7   0:01.51 com.google.android.googlequicksearchbox:search
+ 1445 u0_a131      20   0  14G 302M 239M S  3.8  12.2   0:02.07 com.google.android.gms
+ 1032 radio        20   0  13G 106M  77M S  3.8   4.2   0:00.64 com.android.phone
+
+##### cpu at 10 s
+Tasks: 322 total,   2 running, 320 sleeping,   0 stopped,   0 zombie
+  Mem:  2534552K total,  2206748K used,   327804K free,     5660K buffers
+ Swap:  1900908K total,   451328K used,  1449580K free,   854884K cached
+200%cpu  23%user  73%nice  69%sys  23%idle   4%iow   0%irq   8%sirq   0%host
+  PID USER         PR  NI VIRT  RES  SHR S[%CPU] %MEM     TIME+ ARGS
+ 4278 u0_a129      20   0  14G 191M 138M S 50.0   7.7   0:03.87 com.google.android.apps.messaging
+ 5296 u0_a131      20   0  14G 204M 141M S 46.1   8.2   0:01.29 com.google.android.gms.persistent
+  519 system       18  -2  15G 259M 163M S 23.0  10.4   0:23.03 system_server
+ 5364 u0_a131      20   0  14G 314M 238M S 15.3  12.7   0:00.68 com.google.android.gms
+   39 root         20   0    0    0    0 I 15.3   0.0   0:00.81 [kworker/1:1-events]
+ 3734 u0_a140      20   0  14G 108M  78M S  7.6   4.3   0:00.37 com.google.android.gm
+  318 root         20   0  10G 2.7M 2.6M S  7.6   0.1   0:00.55 dhcpclient -i wlan0 --no-gateway
+   23 root         20   0    0    0    0 R  7.6   0.0   0:00.58 [ksoftirqd/1]
+
+##### focus at 10 s
+  mCurrentFocus=Window{68ceabc u0 com.killswitch.tally/com.killswitch.tally.MainActivity}
+  mFocusedApp=ActivityRecord{c757199 u0 com.killswitch.tally/.MainActivity t8}
+
+##### main thread at 10 s
+Cmd line: com.killswitch.tally
+Build fingerprint: 'google/sdk_gphone64_x86_64/emu64xa:14/UE1A.230829.050/12077443:userdebug/dev-keys'
+ABI: 'x86_64'
+Build type: optimized
+suspend all histogram:	Sum: 1.139ms 99% C.I. 0.097us-746.880us Avg: 103.545us Max: 755us
+"main" prio=5 tid=1 Native
+  | group="main" sCount=1 ucsCount=0 flags=1 obj=0x726ddf98 self=0x7ce0a49372c0
+  | sysTid=4966 nice=-10 cgrp=top-app sched=0/0 handle=0x7ce2c88f74f8
+  | state=S schedstat=( 123474749 627628739 503 ) utm=9 stm=2 core=0 HZ=100
+  | stack=0x7ffcd6c83000-0x7ffcd6c85000 stackSize=8188KB
+  | held mutexes=
+  native: #00 pc 000b94da  /apex/com.android.runtime/lib64/bionic/libc.so (__epoll_pwait+10) (BuildId: fa337969c798946280caa45e2d71a2e7)
+  native: #01 pc 0000fa9f  /system/lib64/libutils.so (android::Looper::pollOnce+303) (BuildId: c777bd164e6d4a5c070cb5e2d9bb92e0)
+  native: #02 pc 00179ea3  /system/lib64/libandroid_runtime.so (android::android_os_MessageQueue_nativePollOnce+35) (BuildId: 58f47cb2665b829aa74415f458f1922a)
+  at android.os.MessageQueue.nativePollOnce(Native method)
+  at android.os.MessageQueue.next(MessageQueue.java:335)
+  at android.os.Looper.loopOnce(Looper.java:162)
+  at android.os.Looper.loop(Looper.java:294)
+  at android.app.ActivityThread.main(ActivityThread.java:8177)
+  at java.lang.reflect.Method.invoke(Native method)
+  at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+  at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+
+"ReferenceQueueDaemon" daemon prio=5 tid=8 Waiting
+  | group="system" sCount=1 ucsCount=0 flags=1 obj=0x12c46160 self=0x7ce0a4931f50
+  | sysTid=4973 nice=4 cgrp=top-app sched=0/0 handle=0x7cdf97132cf0
+  | state=S schedstat=( 27081 6471467 2 ) utm=0 stm=0 core=0 HZ=100
+  | stack=0x7cdf97030000-0x7cdf97032000 stackSize=1035KB
+  | held mutexes=
+  at java.lang.Object.wait(Native method)
+  - waiting on <0x045d710b> (a java.lang.Class<java.lang.ref.ReferenceQueue>)
+  at java.lang.Object.wait(Object.java:386)
+  at java.lang.Object.wait(Object.java:524)
+  at java.lang.Daemons$ReferenceQueueDaemon.runInternal(Daemons.java:239)
+
+##### main thread after tabs
+Cmd line: com.killswitch.tally
+Build fingerprint: 'google/sdk_gphone64_x86_64/emu64xa:14/UE1A.230829.050/12077443:userdebug/dev-keys'
+ABI: 'x86_64'
+Build type: optimized
+suspend all histogram:	Sum: 1.143ms 99% C.I. 0.092us-739.200us Avg: 76.200us Max: 755us
+"main" prio=5 tid=1 Native
+  | group="main" sCount=1 ucsCount=0 flags=1 obj=0x726ddf98 self=0x7ce0a49372c0
+  | sysTid=4966 nice=-10 cgrp=top-app sched=0/0 handle=0x7ce2c88f74f8
+  | state=S schedstat=( 194365420 701941277 601 ) utm=16 stm=3 core=0 HZ=100
+  | stack=0x7ffcd6c83000-0x7ffcd6c85000 stackSize=8188KB
+  | held mutexes=
+  native: #00 pc 000b94da  /apex/com.android.runtime/lib64/bionic/libc.so (__epoll_pwait+10) (BuildId: fa337969c798946280caa45e2d71a2e7)
+  native: #01 pc 0000fa9f  /system/lib64/libutils.so (android::Looper::pollOnce+303) (BuildId: c777bd164e6d4a5c070cb5e2d9bb92e0)
+  native: #02 pc 00179ea3  /system/lib64/libandroid_runtime.so (android::android_os_MessageQueue_nativePollOnce+35) (BuildId: 58f47cb2665b829aa74415f458f1922a)
+  at android.os.MessageQueue.nativePollOnce(Native method)
+  at android.os.MessageQueue.next(MessageQueue.java:335)
+  at android.os.Looper.loopOnce(Looper.java:162)
+  at android.os.Looper.loop(Looper.java:294)
+  at android.app.ActivityThread.main(ActivityThread.java:8177)
+  at java.lang.reflect.Method.invoke(Native method)
+  at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+  at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+
+"ReferenceQueueDaemon" daemon prio=5 tid=8 Waiting
+  | group="system" sCount=1 ucsCount=0 flags=1 obj=0x133402b8 self=0x7ce0a4931f50
+  | sysTid=4973 nice=4 cgrp=top-app sched=0/0 handle=0x7cdf97132cf0
+  | state=S schedstat=( 277484 6501292 5 ) utm=0 stm=0 core=0 HZ=100
+  | stack=0x7cdf97030000-0x7cdf97032000 stackSize=1035KB
+  | held mutexes=
+  at java.lang.Object.wait(Native method)
+  - waiting on <0x045d710b> (a java.lang.Class<java.lang.ref.ReferenceQueue>)
+  at java.lang.Object.wait(Object.java:386)
+  at java.lang.Object.wait(Object.java:524)
+  at java.lang.Daemons$ReferenceQueueDaemon.runInternal(Daemons.java:239)
+
+##### prefs after the seeded build
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <string name="builds">[{&quot;id&quot;:&quot;bseed00001&quot;,&quot;name&quot;:&quot;Seeded&quot;,&quot;pkg&quot;:&quot;com.killswitch.seeded&quot;,&quot;fit&quot;:&quot;fill&quot;,&quot;created&quot;:1,&quot;stage&quot;:&quot;Failed&quot;,&quot;detail&quot;:&quot;&quot;,&quot;runId&quot;:0,&quot;saved&quot;:&quot;&quot;,&quot;error&quot;:&quot;Add your GitHub token in Setup, then try again.&quot;,&quot;resume&quot;:false}]</string>
+</map>

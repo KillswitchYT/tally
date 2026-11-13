@@ -1,0 +1,36 @@
+== wait for the emulator (max 150 s)
+screen 1080x2400 at 420 dpi
+adb root uid: 0
+== install
+Performing Streamed Install
+Success
+PASS installs on Android 14 (emulator)
+PASS installing the same build again works (update path)
+== launch
+Starting: Intent { cmp=com.killswitch.tally/.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.killswitch.tally/.MainActivity
+TotalTime: 2183
+WaitTime: 2185
+Complete
+PASS app is running 20 s after launch
+== tabs (taps near the glass tab bar)
+PASS app survived switching tabs
+== dark mode
+Night mode: yes
+Night mode: no
+== background service, driven by a seeded build (no token, so it must fail politely)
+seed.xml: 1 file pushed, 0 skipped. 5.6 MB/s (277 bytes in 0.000s)
+SELinux: Loaded file context from:
+		/system/etc/selinux/plat_file_contexts
+		/system_ext/etc/selinux/system_ext_file_contexts
+		/vendor/etc/selinux/vendor_file_contexts
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <string name="builds">[{&quot;id&quot;:&quot;bseed00001&quot;,&quot;name&quot;:&quot;Seeded&quot;,&quot;pkg&quot;:&quot;com.killswitch.seeded&quot;,&quot;fit&quot;:&quot;fill&quot;,&quot;created&quot;:1,&quot;stage&quot;:&quot;Failed&quot;,&quot;detail&quot;:&quot;&quot;,&quot;runId&quot;:0,&quot;saved&quot;:&quot;&quot;,&quot;error&quot;:&quot;Add your GitHub token in Setup, then try again.&quot;,&quot;resume&quot;:false}]</string>
+</map>
+FAIL seeded build did not end as expected, see smoke-diag.txt
+== crash scan
+PASS no crash or ANR in the log
+PASS still running at the end

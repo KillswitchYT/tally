@@ -1,0 +1,277 @@
+--------- beginning of system
+11-13 10:19:26.629 D/CompatibilityChangeReporter(  519): Compat change id reported: 265464455; UID 10192; state: DISABLED
+11-13 10:19:26.629 D/CompatibilityChangeReporter(  519): Compat change id reported: 265452344; UID 10192; state: DISABLED
+11-13 10:19:26.629 D/CompatibilityChangeReporter(  519): Compat change id reported: 266124927; UID 10192; state: DISABLED
+11-13 10:19:26.629 D/CompatibilityChangeReporter(  519): Compat change id reported: 265451093; UID 10192; state: DISABLED
+11-13 10:19:26.629 D/CompatibilityChangeReporter(  519): Compat change id reported: 265456536; UID 10192; state: DISABLED
+11-13 10:19:26.629 D/CompatibilityChangeReporter(  519): Compat change id reported: 255940284; UID 10192; state: DISABLED
+11-13 10:19:26.629 D/CompatibilityChangeReporter(  519): Compat change id reported: 236283604; UID 10192; state: DISABLED
+11-13 10:19:26.629 D/CompatibilityChangeReporter(  519): Compat change id reported: 263959004; UID 10192; state: DISABLED
+11-13 10:19:26.629 D/CompatibilityChangeReporter(  519): Compat change id reported: 264304459; UID 10192; state: DISABLED
+11-13 10:19:26.629 D/CompatibilityChangeReporter(  519): Compat change id reported: 264301586; UID 10192; state: DISABLED
+11-13 10:19:26.629 D/CompatibilityChangeReporter(  519): Compat change id reported: 254631730; UID 10192; state: DISABLED
+11-13 10:19:26.629 D/CompatibilityChangeReporter(  519): Compat change id reported: 273509367; UID 10192; state: DISABLED
+11-13 10:19:26.629 D/CompatibilityChangeReporter(  519): Compat change id reported: 263259275; UID 10192; state: DISABLED
+11-13 10:19:26.629 D/CompatibilityChangeReporter(  519): Compat change id reported: 174042980; UID 10192; state: DISABLED
+11-13 10:19:26.629 D/CompatibilityChangeReporter(  519): Compat change id reported: 174042936; UID 10192; state: DISABLED
+11-13 10:19:26.629 D/CompatibilityChangeReporter(  519): Compat change id reported: 181136395; UID 10192; state: DISABLED
+11-13 10:19:26.629 D/CompatibilityChangeReporter(  519): Compat change id reported: 194480991; UID 10192; state: ENABLED
+11-13 10:19:26.631 V/SplashScreenExceptionList(  519): SplashScreen checking exception for package com.killswitch.tally (target sdk:34) -> false
+11-13 10:19:26.632 D/CompatibilityChangeReporter(  519): Compat change id reported: 205907456; UID 10192; state: ENABLED
+11-13 10:19:26.633 V/WindowManagerShell(  826): Transition requested: android.os.BinderProxy@8e88f3f TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=9 displayId=0 isRunning=true baseIntent=Intent { flg=0x10000000 cmp=com.killswitch.tally/.MainActivity } baseActivity=ComponentInfo{com.killswitch.tally/com.killswitch.tally.MainActivity} topActivity=ComponentInfo{com.killswitch.tally/com.killswitch.tally.MainActivity} origActivity=null realActivity=ComponentInfo{com.killswitch.tally/com.killswitch.tally.MainActivity} numActivities=1 lastActiveTime=117027 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@64600c} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=ActivityInfo{548bd55 com.killswitch.tally.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+11-13 10:19:26.633 I/ActivityTaskManager(  519): START u0 {flg=0x10000000 cmp=com.killswitch.tally/.MainActivity} with LAUNCH_SINGLE_TASK from uid 0 (BAL_ALLOW_ALLOWLISTED_UID) result code=0
+11-13 10:19:26.634 D/CompatibilityChangeReporter(  519): Compat change id reported: 135634846; UID 10192; state: DISABLED
+11-13 10:19:26.635 D/CompatibilityChangeReporter(  519): Compat change id reported: 143937733; UID 10192; state: ENABLED
+--------- beginning of main
+11-13 10:19:26.635 D/SplashScreenView(  826): Build android.window.SplashScreenView{814a4a4 V.E...... ......ID 0,0-0,0}
+11-13 10:19:26.635 D/SplashScreenView(  826): Icon: view: android.widget.ImageView{5cc420d V.ED..... ......I. 0,0-0,0 #10204f0 android:id/splashscreen_icon_view} drawable: com.android.wm.shell.startingsurface.SplashscreenIconDrawableFactory$ImmobileIconDrawable@72645c2 size: 420
+11-13 10:19:26.635 D/SplashScreenView(  826): Branding: view: android.view.View{a98ffd3 G.ED..... ......I. 0,0-0,0 #10204ef android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+11-13 10:19:26.636 D/CompatibilityChangeReporter(  519): Compat change id reported: 265195908; UID 10192; state: ENABLED
+11-13 10:19:26.638 I/BpBinder(  400): onLastStrongRef automatically unlinking death recipients: 
+11-13 10:19:26.643 D/Zygote  (  336): Forked child process 6041
+11-13 10:19:26.645 I/ActivityManager(  519): Start proc 6041:com.killswitch.tally/u0a192 for next-top-activity {com.killswitch.tally/com.killswitch.tally.MainActivity}
+11-13 10:19:26.647 D/CompatibilityChangeReporter(  519): Compat change id reported: 168419799; UID 10192; state: DISABLED
+11-13 10:19:26.647 D/CompatibilityChangeReporter(  519): Compat change id reported: 273564678; UID 10192; state: DISABLED
+11-13 10:19:26.655 D/CoreBackPreview(  519): Window{ee0a61d u0 Splash Screen com.killswitch.tally}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@a47aa63, mPriority=0, mIsAnimationCallback=false}
+11-13 10:19:26.684 I/illswitch.tally( 6041): Using CollectorTypeCC GC.
+11-13 10:19:26.685 W/illswitch.tally( 6041): Unexpected CPU variant for x86: x86_64.
+11-13 10:19:26.685 W/illswitch.tally( 6041): Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+11-13 10:19:26.687 E/illswitch.tally( 6041): Not starting debugger since process cannot load the jdwp agent.
+11-13 10:19:26.727 D/EGL_emulation( 1067): app_time_stats: avg=135.51ms min=42.48ms max=451.00ms count=8
+11-13 10:19:26.788 W/Looper  (  826): Slow delivery took 52ms wmshell.main h=android.os.Handler c=null m=1
+11-13 10:19:26.797 V/WindowManager(  519): Sent Transition #12 createdAt=11-13 10:19:26.629 via request=TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=9 displayId=0 isRunning=true baseIntent=Intent { flg=0x10000000 cmp=com.killswitch.tally/.MainActivity } baseActivity=ComponentInfo{com.killswitch.tally/com.killswitch.tally.MainActivity} topActivity=ComponentInfo{com.killswitch.tally/com.killswitch.tally.MainActivity} origActivity=null realActivity=ComponentInfo{com.killswitch.tally/com.killswitch.tally.MainActivity} numActivities=1 lastActiveTime=117027 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{5d0cfea Task{bfe9648 #9 type=standard A=10192:com.killswitch.tally}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=ActivityInfo{23e02db com.killswitch.tally.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+11-13 10:19:26.797 V/WindowManager(  519):     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+11-13 10:19:26.797 V/WindowManager(  519):     info={id=12 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{5d0cfea Task{bfe9648 #9 type=standard A=10192:com.killswitch.tally}}} m=OPEN f=NONE leash=Surface(name=Task=9)/@0xf2753de sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{RemoteToken{f5c4063 Task{158bd3a #1 type=home}}} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x8650d99 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+11-13 10:19:26.799 V/WindowManagerShell(  826): onTransitionReady android.os.BinderProxy@8e88f3f: {id=12 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@aba7ee6} m=OPEN f=NONE leash=Surface(name=Task=9)/@0x7d6964b sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@ff64c27} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x12b0828 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+11-13 10:19:26.799 V/WindowManagerShell(  826): Playing animation for (#12)android.os.BinderProxy@8e88f3f@0
+11-13 10:19:26.799 V/WindowManagerShell(  826):  try handler com.android.wm.shell.transition.DefaultMixedHandler@aa49f7f
+11-13 10:19:26.799 V/WindowManagerShell(  826):  try handler com.android.wm.shell.keyguard.KeyguardTransitionHandler@beacb4c
+11-13 10:19:26.799 V/WindowManagerShell(  826):  try handler com.android.wm.shell.activityembedding.ActivityEmbeddingController@5b1e795
+11-13 10:19:26.799 V/WindowManagerShell(  826):  try handler com.android.wm.shell.recents.RecentsTransitionHandler@38d30aa
+11-13 10:19:26.799 V/ShellRecents(  826): RecentsTransitionHandler.startAnimation: no controller found
+11-13 10:19:26.799 V/WindowManagerShell(  826):  try handler com.android.wm.shell.pip.PipTransition@56db49b
+11-13 10:19:26.799 V/WindowManagerShell(  826):  try handler com.android.wm.shell.splitscreen.StageCoordinator@79f5038
+11-13 10:19:26.799 V/WindowManagerShell(  826):  try handler com.android.wm.shell.transition.RemoteTransitionHandler@c966811
+11-13 10:19:26.799 V/WindowManagerShell(  826): Transition doesn't have explicit remote, search filters for match for {id=12 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@aba7ee6} m=OPEN f=NONE leash=Surface(name=Task=9)/@0x7d6964b sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@ff64c27} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x12b0828 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+11-13 10:19:26.800 V/WindowManagerShell(  826):  Checking filter Pair{{types=[] flags=0x0] notFlags=0x0 checks=[{atype=dream independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=ANY topActivity=null},{atype=home independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@93a8eae, appThread = android.app.IApplicationThread$Stub$Proxy@dfbf44f, debugName = LauncherToDream }}
+11-13 10:19:26.800 V/WindowManagerShell(  826):  Checking filter Pair{{types=[] flags=0x0] notFlags=0x100 checks=[{atype=home independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=TOP topActivity=ComponentInfo{com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}},{atype=standard independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@cd147dc, appThread = android.app.IApplicationThread$Stub$Proxy@928d0e5, debugName = QuickstepLaunchHome }}
+11-13 10:19:26.800 V/WindowManagerShell(  826):  Delegate animation for #12 to null
+11-13 10:19:26.800 V/WindowManagerShell(  826):  try handler com.android.wm.shell.transition.DefaultTransitionHandler@8772b02
+11-13 10:19:26.800 V/WindowManagerShell(  826): start default transition animation, info = {id=12 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@aba7ee6} m=OPEN f=NONE leash=Surface(name=Task=9)/@0x7d6964b sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@ff64c27} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x12b0828 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+11-13 10:19:26.800 V/WindowManagerShell(  826): loadAnimation: anim=android.view.animation.AnimationSet@85ec87d animAttr=0x13 type=OPEN isEntrance=false
+11-13 10:19:26.800 V/WindowManagerShell(  826): loadAnimation: anim=android.view.animation.AnimationSet@3146f79 animAttr=0x12 type=OPEN isEntrance=true
+11-13 10:19:26.801 V/WindowManagerShell(  826):  animated by com.android.wm.shell.transition.DefaultTransitionHandler@8772b02
+11-13 10:19:26.801 W/Looper  (  826): Drained
+11-13 10:19:26.817 V/WindowManagerShell(  826): Transition animation finished (aborted=false), notifying core (#12)android.os.BinderProxy@8e88f3f@0
+11-13 10:19:26.843 D/EGL_emulation(  826): app_time_stats: avg=503.33ms min=88.80ms max=917.86ms count=2
+11-13 10:19:26.870 W/ActivityManager(  519): Slow operation: 77ms so far, now at attachApplicationLocked: immediately before bindApplication
+11-13 10:19:26.870 W/ActivityManager(  519): Slow operation: 77ms so far, now at attachApplicationLocked: immediately after bindApplication
+11-13 10:19:26.870 W/ActivityManager(  519): Slow operation: 77ms so far, now at attachApplicationLocked: after updateLruProcessLocked
+11-13 10:19:26.876 V/WindowManagerShell(  826): Track 0 became idle
+11-13 10:19:26.876 V/WindowManagerShell(  826): All active transition animations finished
+11-13 10:19:26.876 W/Looper  (  826): Slow dispatch took 59ms wmshell.main h=android.os.Handler c=com.android.wm.shell.transition.DefaultTransitionHandler$$ExternalSyntheticLambda0@24f94b1 m=0
+11-13 10:19:26.876 W/Looper  (  826): Slow delivery took 38ms wmshell.main h=android.os.Handler c=com.android.wm.shell.pip.phone.PipController$$ExternalSyntheticLambda1@d166d96 m=0
+11-13 10:19:26.876 W/Looper  (  826): Drained
+11-13 10:19:26.880 W/system_server(  519): Long monitor contention with owner android.anim (540) at void com.android.server.wm.WindowSurfacePlacer$Traverser.run()(WindowSurfacePlacer.java:58) waiters=1 in android.app.ActivityTaskManager$RootTaskInfo com.android.server.wm.ActivityTaskManagerService.getRootTaskInfo(int, int) for 137ms
+11-13 10:19:26.882 V/WindowManager(  519): Finish Transition #12: created at 11-13 10:19:26.629 collect-started=0.022ms request-sent=2.985ms started=4.908ms ready=91.815ms sent=166.935ms finished=243.121ms
+11-13 10:19:26.896 D/CompatibilityChangeReporter( 6041): Compat change id reported: 171979766; UID 10192; state: ENABLED
+11-13 10:19:26.897 D/CompatibilityChangeReporter( 6041): Compat change id reported: 242716250; UID 10192; state: ENABLED
+11-13 10:19:26.898 D/CompatibilityChangeReporter(  519): Compat change id reported: 170503758; UID 10192; state: ENABLED
+11-13 10:19:26.902 D/ApplicationLoaders( 6041): Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+11-13 10:19:26.902 D/ApplicationLoaders( 6041): Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+11-13 10:19:26.967 D/nativeloader( 6041): Configuring clns-6 for other apk /data/app/~~HkrVJJZCdpZLIGLnB5AETQ==/com.killswitch.tally-nSmvhkurSA5ksRX-VsdVpw==/base.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~HkrVJJZCdpZLIGLnB5AETQ==/com.killswitch.tally-nSmvhkurSA5ksRX-VsdVpw==/lib/x86_64:/data/app/~~HkrVJJZCdpZLIGLnB5AETQ==/com.killswitch.tally-nSmvhkurSA5ksRX-VsdVpw==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.killswitch.tally
+11-13 10:19:26.976 V/GraphicsEnvironment( 6041): Currently set values for:
+11-13 10:19:26.976 V/GraphicsEnvironment( 6041):   angle_gl_driver_selection_pkgs=[]
+11-13 10:19:26.976 V/GraphicsEnvironment( 6041):   angle_gl_driver_selection_values=[]
+11-13 10:19:26.977 V/GraphicsEnvironment( 6041): ANGLE GameManagerService for com.killswitch.tally: false
+11-13 10:19:26.977 V/GraphicsEnvironment( 6041): com.killswitch.tally is not listed in per-application setting
+11-13 10:19:26.977 V/GraphicsEnvironment( 6041): Neither updatable production driver nor prerelease driver is supported.
+11-13 10:19:26.980 I/ActivityManager(  519): Flag disabled. Ignoring finishAttachApplication from uid: 10192. pid: 6041
+11-13 10:19:26.989 D/libEGL  ( 6041): loaded /vendor/lib64/egl/libEGL_emulation.so
+11-13 10:19:26.991 D/libEGL  ( 6041): loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+11-13 10:19:26.992 D/libEGL  ( 6041): loaded /vendor/lib64/egl/libGLESv2_emulation.so
+11-13 10:19:26.996 I/ActivityManager(  519): Background started FGS: Allowed [callingPackage: com.killswitch.tally; callingUid: 10192; uidState: TOP ; uidBFSL: [BFSL]; intent: Intent { cmp=com.killswitch.tally/.BuildService }; code:PROC_STATE_TOP; tempAllowListReason:<null>; targetSdkVersion:34; callerTargetSdkVersion:34; startForegroundCount:0; bindFromPackage:null: isBindService:false]
+11-13 10:19:27.000 D/CompatibilityChangeReporter( 6041): Compat change id reported: 237531167; UID 10192; state: DISABLED
+11-13 10:19:27.000 W/OpenGLRenderer( 6041): Unknown dataspace 0
+11-13 10:19:27.004 D/CompatibilityChangeReporter( 6041): Compat change id reported: 193247900; UID 10192; state: ENABLED
+11-13 10:19:27.028 D/EGL_emulation(  826): app_time_stats: avg=1017.42ms min=1017.42ms max=1017.42ms count=1
+11-13 10:19:27.038 D/CoreBackPreview(  519): Window{2c99fc1 u0 com.killswitch.tally/com.killswitch.tally.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@220d754, mPriority=0, mIsAnimationCallback=false}
+11-13 10:19:27.063 D/CompatibilityChangeReporter( 6041): Compat change id reported: 289878283; UID 10192; state: ENABLED
+11-13 10:19:27.090 W/OpenGLRenderer( 6041): Failed to initialize 101010-2 format, error = EGL_SUCCESS
+11-13 10:19:27.106 I/hwservicemanager(  134): getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+11-13 10:19:27.107 I/Gralloc4( 6041): mapper 4.x is not supported
+--------- beginning of kernel
+11-13 10:19:27.291 I/servicemanager(    0): Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest.
+11-13 10:19:27.279 W/Bugle   ( 4278): TextClassifierLibManagerImpl: Reclaiming memory at level: 40
+11-13 10:19:27.475 D/StatusBarIconController(  826): ignoring old pipeline callback because the new wifi icon is enabled
+11-13 10:19:27.858 D/StatusBarIconController(  826): ignoring old pipeline callbacks, because the new mobile icons are enabled
+11-13 10:19:28.087 E/SurfaceSyncGroup( 6041): Failed to receive transaction ready in 1000ms. Marking SurfaceSyncGroup(wmsSync-VRI[MainActivity]#0) as ready
+11-13 10:19:28.090 E/SurfaceSyncGroup( 6041): Failed to receive transaction ready in 1000ms. Marking SurfaceSyncGroup(VRI[MainActivity]#1) as ready
+11-13 10:19:28.092 I/ActivityTaskManager(  519): Displayed com.killswitch.tally/.MainActivity for user 0: +1s461ms
+11-13 10:19:28.170 W/WindowOnBackDispatcher(  826): sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@b16fc0e
+11-13 10:19:28.171 W/InputManager-JNI(  519): Input channel object 'ee0a61d Splash Screen com.killswitch.tally (client)' was disposed without first being removed with the input manager!
+11-13 10:19:28.172 D/CoreBackPreview(  519): Window{ee0a61d u0 Splash Screen com.killswitch.tally EXITING}: Setting back callback null
+11-13 10:19:28.305 D/OneSearchSuggestProvider( 1067): Shut down the binder channel
+11-13 10:19:28.306 I/IPCThreadState( 1067): oneway function results for code 2 on binder at 0x7ce134972240 will be dropped but finished with status UNKNOWN_TRANSACTION
+11-13 10:19:28.314 D/BtGatt.ScanManager( 1008): uid 10131 isForeground true scanMode -1
+11-13 10:19:28.314 D/BtGatt.ScanManager( 1008): uid 10131 isForeground true scanMode -1
+11-13 10:19:28.315 D/EGL_emulation(  826): app_time_stats: avg=717.94ms min=35.37ms max=1400.50ms count=2
+11-13 10:19:28.316 I/ImeTracker( 1067): com.google.android.apps.nexuslauncher:beb80892: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+11-13 10:19:28.316 I/PBSessionCacheImpl( 1797): Deleted sessionId[7905084145531958] from persistence.
+11-13 10:19:28.319 W/SearchServiceCore( 1797): Abort, client detached.
+11-13 10:19:28.319 W/SearchServiceCore( 1797): Abort, client detached.
+11-13 10:19:28.319 W/SearchServiceCore( 1797): Abort, client detached.
+11-13 10:19:28.319 W/SearchServiceCore( 1797): Abort, client detached.
+11-13 10:19:28.319 W/SearchServiceCore( 1797): Abort, client detached.
+11-13 10:19:28.319 W/SearchServiceCore( 1797): Abort, client detached.
+11-13 10:19:28.319 W/SearchServiceCore( 1797): Abort, client detached.
+11-13 10:19:28.320 I/ImeTracker(  519): com.google.android.apps.nexuslauncher:beb80892: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11-13 10:19:29.720 D/CompatibilityChangeReporter( 6041): Compat change id reported: 160794467; UID 10192; state: ENABLED
+11-13 10:19:29.720 D/CompatibilityChangeReporter(  519): Compat change id reported: 170668199; UID 10192; state: ENABLED
+11-13 10:19:29.720 D/CompatibilityChangeReporter(  519): Compat change id reported: 255659651; UID 10192; state: DISABLED
+11-13 10:19:29.720 D/CompatibilityChangeReporter(  519): Compat change id reported: 255039210; UID 10192; state: DISABLED
+11-13 10:19:29.727 I/Choreographer( 6041): Skipped 163 frames!  The application may be doing too much work on its main thread.
+11-13 10:19:29.730 I/OpenGLRenderer( 6041): Davey! duration=2733ms; Flags=1, FrameTimelineVsyncId=7682, IntendedVsync=117383407259, Vsync=117383407259, InputEventId=0, HandleInputStart=117397513470, AnimationStart=117397513851, PerformTraversalsStart=117397524036, DrawStart=117521709102, FrameDeadline=117400073925, FrameInterval=117397509895, FrameStartTime=16666666, SyncQueued=117528927633, SyncStart=117529180830, IssueDrawCommandsStart=117530251627, SwapBuffers=120050305720, FrameCompleted=120116912470, DequeueBufferDuration=3345, QueueBufferDuration=187079, GpuCompleted=120116912470, SwapBuffersCompleted=120106690998, DisplayPresentTime=16496969387776, CommandSubmissionCompleted=120050305720, 
+11-13 10:19:29.741 D/CompatibilityChangeReporter(  519): Compat change id reported: 214016041; UID 10192; state: ENABLED
+11-13 10:19:29.741 I/ImeTracker(  519): com.killswitch.tally:567ecab8: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+11-13 10:19:29.741 I/ImeTracker(  519): com.killswitch.tally:567ecab8: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11-13 10:19:29.744 I/GoogleInputMethodService( 1502): GoogleInputMethodService.onFinishInput():3227 
+11-13 10:19:29.745 I/GoogleInputMethodService( 1502): GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 0, unlocked = true
+11-13 10:19:29.745 I/GoogleInputMethodService( 1502): GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.killswitch.tally fieldId=0 fieldName=null extras=null}, false)
+11-13 10:19:29.745 I/GoogleInputMethodService( 1502): GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+11-13 10:19:29.745 D/BtGatt.ScanManager( 1008): uid 10131 isForeground true scanMode -1
+11-13 10:19:29.745 D/BtGatt.ScanManager( 1008): uid 10131 isForeground true scanMode -1
+11-13 10:19:29.746 I/GoogleInputMethodService( 1502): GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+11-13 10:19:29.805 I/FontLog ( 5296): Updating from directory version 0 to 25 from disk [CONTEXT service_id=132 ]
+11-13 10:19:29.806 I/FontLog ( 5296): Using directory in FlatBuffer format [CONTEXT service_id=132 ]
+11-13 10:19:29.809 I/FontLog ( 5296): Received query Noto Color Emoji Compat, URI content://com.google.android.gms.fonts [CONTEXT service_id=132 ]
+11-13 10:19:29.810 I/FontLog ( 5296): Query [emojicompat-emoji-font] resolved to {Noto Color Emoji Compat, wdth 100.0, wght 400, ital 0.0, bestEffort false} [CONTEXT service_id=132 ]
+11-13 10:19:29.811 I/FontLog ( 5296): Fetch {Noto Color Emoji Compat, wdth 100.0, wght 400, ital 0.0, bestEffort false} end status Status{statusCode=SUCCESS, resolution=null} [CONTEXT service_id=132 ]
+11-13 10:19:29.812 I/FontLog ( 5296): Pulling font file for id = 1, cache size = 1 [CONTEXT service_id=132 ]
+11-13 10:19:29.814 I/FontLog ( 5296): Pulling font file for id = 1, cache size = 1 [CONTEXT service_id=132 ]
+11-13 10:19:29.849 E/TaskPersister(  519): File error accessing recents directory (directory doesn't exist?).
+11-13 10:19:29.990 I/OpenGLRenderer( 6041): Davey! duration=2932ms; Flags=0, FrameTimelineVsyncId=7697, IntendedVsync=117400073925, Vsync=120116740483, InputEventId=0, HandleInputStart=120122946902, AnimationStart=120122947593, PerformTraversalsStart=120131156881, DrawStart=120131481905, FrameDeadline=120150073815, FrameInterval=120122844168, FrameStartTime=16666666, SyncQueued=120133710538, SyncStart=120135087134, IssueDrawCommandsStart=120135205611, SwapBuffers=120292604572, FrameCompleted=120333508485, DequeueBufferDuration=3455, QueueBufferDuration=356401, GpuCompleted=120333508485, SwapBuffersCompleted=120328658871, DisplayPresentTime=20401094660746, CommandSubmissionCompleted=120292604572, 
+11-13 10:19:29.994 D/FlashNotifController(  519): requestStartFlashNotification
+11-13 10:19:29.994 I/FlashNotifController(  519): startFlashNotification: type=1, tag=android
+11-13 10:19:29.994 D/FlashNotifController(  519): Flash notification is disabled
+11-13 10:19:30.001 W/NotificationHistory(  519): Attempted to add notif for locked/gone/disabled user 0
+11-13 10:19:30.003 W/AiAiEcho( 1635): LyftNotificationParser Ridesharing ETA not enabled
+11-13 10:19:30.004 W/AiAiEcho( 1635): SmartspaceNotificationPredictor no parser can handle this notification or notification is invalid
+11-13 10:19:30.016 D/NuPlayerDriver(  467): NuPlayerDriver(0x761b9865af50) created, clientPid(826)
+11-13 10:19:30.021 I/hwservicemanager(  134): getTransport: Cannot find entry android.hardware.media.omx@1.0::IOmx/default in either framework or device VINTF manifest.
+11-13 10:19:30.021 D/MediaPlayerService(  467): OMX service is not available
+11-13 10:19:30.056 D/EGL_emulation(  826): app_time_stats: avg=539.57ms min=2.48ms max=1605.15ms count=3
+11-13 10:19:30.059 D/GenericSource(  467): FileSource remote
+11-13 10:19:30.061 D/LocalImageResolver(  826): Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+11-13 10:19:30.068 D/LocalImageResolver(  826): Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+11-13 10:19:30.085 I/MediaFocusControl(  519): requestAudioFocus() from uid/pid 10168/826 AA=USAGE_NOTIFICATION/CONTENT_TYPE_SONIFICATION clientId=android.media.AudioManager@2cf209f callingPack=com.android.systemui req=3 flags=0x0 sdk=34
+11-13 10:19:30.087 I/AudioService.FadeOutManager(  519): unfadeOutUid() uid:10168
+11-13 10:19:30.118 D/OomAdjuster(  519): Not killing cached processes
+11-13 10:19:30.457 D/ActivityManager(  519): freezing 2165 com.google.android.contacts
+11-13 10:19:30.477 D/StatusBarIconController(  826): ignoring old pipeline callback because the new wifi icon is enabled
+11-13 10:19:30.588 D/MediaRouter(  826): onRestoreRoute() : route=RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+11-13 10:19:30.588 I/GenericSource(  467): start
+11-13 10:19:30.588 V/MediaRouter(  826): Selecting route: RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+11-13 10:19:30.590 D/CCodec  (  467): allocate(c2.android.vorbis.decoder)
+11-13 10:19:30.590 I/CCodec  (  467): setting up 'default' as default (vendor) store
+11-13 10:19:30.591 I/CCodec  (  467): Created component [c2.android.vorbis.decoder]
+11-13 10:19:30.591 D/CCodecConfig(  467): read media type: audio/vorbis
+11-13 10:19:30.592 D/ReflectedParamUpdater(  467): extent() != 1 for single value type: algo.buffers.max-count.values
+11-13 10:19:30.592 D/ReflectedParamUpdater(  467): extent() != 1 for single value type: output.subscribed-indices.values
+11-13 10:19:30.592 D/ReflectedParamUpdater(  467): extent() != 1 for single value type: input.buffers.allocator-ids.values
+11-13 10:19:30.592 D/ReflectedParamUpdater(  467): extent() != 1 for single value type: output.buffers.allocator-ids.values
+11-13 10:19:30.592 D/ReflectedParamUpdater(  467): extent() != 1 for single value type: algo.buffers.allocator-ids.values
+11-13 10:19:30.592 D/ReflectedParamUpdater(  467): extent() != 1 for single value type: output.buffers.pool-ids.values
+11-13 10:19:30.592 D/ReflectedParamUpdater(  467): extent() != 1 for single value type: algo.buffers.pool-ids.values
+11-13 10:19:30.593 I/CCodecConfig(  467): query failed after returning 7 values (BAD_INDEX)
+11-13 10:19:30.593 D/CCodecConfig(  467): c2 config diff is Dict {
+11-13 10:19:30.593 D/CCodecConfig(  467):   c2::u32 coded.bitrate.value = 64000
+11-13 10:19:30.593 D/CCodecConfig(  467):   c2::u32 input.buffers.max-size.value = 32768
+11-13 10:19:30.593 D/CCodecConfig(  467):   c2::u32 input.delay.value = 0
+11-13 10:19:30.593 D/CCodecConfig(  467):   string input.media-type.value = "audio/vorbis"
+11-13 10:19:30.593 D/CCodecConfig(  467):   string output.media-type.value = "audio/raw"
+11-13 10:19:30.593 D/CCodecConfig(  467):   c2::u32 raw.channel-count.value = 1
+11-13 10:19:30.593 D/CCodecConfig(  467):   c2::u32 raw.sample-rate.value = 48000
+11-13 10:19:30.593 D/CCodecConfig(  467): }
+11-13 10:19:30.594 D/MediaCodec(  467): flushMediametrics
+11-13 10:19:30.594 D/CCodec  (  467): [c2.android.vorbis.decoder] buffers are bound to CCodec for this session
+11-13 10:19:30.594 D/CCodecConfig(  467): no c2 equivalents for durationUs
+11-13 10:19:30.594 D/CCodecConfig(  467): no c2 equivalents for csd-1
+11-13 10:19:30.594 D/CCodecConfig(  467): no c2 equivalents for flags
+11-13 10:19:30.594 D/CCodecConfig(  467): c2 config diff is   c2::u32 coded.bitrate.value = 70000
+11-13 10:19:30.594 W/Codec2Client(  467): query -- param skipped: index = 1107298332.
+11-13 10:19:30.594 D/CCodec  (  467): encoding statistics level = 0
+11-13 10:19:30.594 D/CCodec  (  467): setup formats input: AMessage(what = 0x00000000) = {
+11-13 10:19:30.594 D/CCodec  (  467):   int32_t bitrate = 70000
+11-13 10:19:30.594 D/CCodec  (  467):   int32_t channel-count = 1
+11-13 10:19:30.594 D/CCodec  (  467):   int32_t max-input-size = 32768
+11-13 10:19:30.594 D/CCodec  (  467):   string mime = "audio/vorbis"
+11-13 10:19:30.594 D/CCodec  (  467):   int32_t sample-rate = 48000
+11-13 10:19:30.594 D/CCodec  (  467): }
+11-13 10:19:30.594 D/CCodec  (  467): setup formats output: AMessage(what = 0x00000000) = {
+11-13 10:19:30.594 D/CCodec  (  467):   int32_t channel-count = 1
+11-13 10:19:30.594 D/CCodec  (  467):   string mime = "audio/raw"
+11-13 10:19:30.594 D/CCodec  (  467):   int32_t sample-rate = 48000
+11-13 10:19:30.594 D/CCodec  (  467):   int32_t channel-mask = 1
+11-13 10:19:30.594 D/CCodec  (  467):   int32_t android._config-pcm-encoding = 2
+11-13 10:19:30.594 D/CCodec  (  467): }
+11-13 10:19:30.594 I/CCodecConfig(  467): query failed after returning 7 values (BAD_INDEX)
+11-13 10:19:30.595 I/MediaCodec(  467): MediaCodec will operate in async mode
+11-13 10:19:30.595 D/MediaCodec(  467): keep callback message for reclaim
+11-13 10:19:30.595 W/Codec2Client(  467): query -- param skipped: index = 1342179345.
+11-13 10:19:30.595 W/Codec2Client(  467): query -- param skipped: index = 2415921170.
+11-13 10:19:30.595 D/CCodecBufferChannel(  467): [c2.android.vorbis.decoder#996] Created input block pool with allocatorID 16 => poolID 18 - OK (0)
+11-13 10:19:30.596 D/BufferPoolAccessor2.0(  467): bufferpool2 0x761cd86663d8 : 0(0 size) total buffers - 0(0 size) used buffers - 0/5 (recycle/alloc) - 2/4 (fetch/transfer)
+11-13 10:19:30.596 D/BufferPoolAccessor2.0(  467): Destruction - bufferpool2 0x761cd86663d8 cached: 0/0M, 0/0% in use; allocs: 5, 0% recycled; transfers: 4, 50% unfetched
+11-13 10:19:30.596 I/CCodecBufferChannel(  467): [c2.android.vorbis.decoder#996] Created output block pool with allocatorID 16 => poolID 27 - OK
+11-13 10:19:30.596 D/CCodecBufferChannel(  467): [c2.android.vorbis.decoder#996] Configured output block pool ids 27 => OK
+11-13 10:19:30.596 D/SimpleC2Component(  475): Using output block pool with poolID 27 => got 27 - 0
+11-13 10:19:30.602 D/AudioFlinger(  397): Client defaulted notificationFrames to 12512 for frameCount 25024
+11-13 10:19:30.602 D/AF::TrackHandle(  397): OpPlayAudio: track:56 usage:5 not muted
+11-13 10:19:30.604 D/audioserver(  397): FGS Logger Transaction failed
+11-13 10:19:30.604 D/audioserver(  397): -129
+11-13 10:19:30.605 D/AudioTrack(  467): getTimestamp_l(16): device stall time corrected using current time 121000635963
+11-13 10:19:30.673 D/AudioFlinger(  397): mixer(0x79303bead930) throttle end: throttle time(33)
+11-13 10:19:31.293 D/BoundBrokerSvc( 5296): onUnbind: Intent { act=com.google.android.gms.scheduler.ACTION_PROXY_SCHEDULE dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiService }
+11-13 10:19:31.924 D/AudioTrack(  467): stop(16): called with 82980 frames delivered
+11-13 10:19:32.357 I/MediaFocusControl(  519): abandonAudioFocus() from uid/pid 10168/826 clientId=android.media.AudioManager@2cf209f
+11-13 10:19:32.357 V/MediaPlayer(  826): resetDrmState:  mDrmInfo=null mDrmProvisioningThread=null mPrepareDrmInProgress=false mActiveDrmScheme=false
+11-13 10:19:32.357 V/MediaPlayer(  826): cleanDrmObj: mDrmObj=null mDrmSessionId=null
+11-13 10:19:32.357 D/NuPlayerDriver(  467): reset(0x761b9865af50) at state 6
+11-13 10:19:32.358 I/hw-BpHwBinder(  467): onLastStrongRef automatically unlinking death recipients
+11-13 10:19:32.358 I/hw-BpHwBinder(  475): onLastStrongRef automatically unlinking death recipients
+11-13 10:19:32.358 I/hw-BpHwBinder(  475): onLastStrongRef automatically unlinking death recipients
+11-13 10:19:32.359 D/MediaCodec(  467): flushMediametrics
+11-13 10:19:32.360 D/NuPlayerDriver(  467): notifyResetComplete(0x761b9865af50)
+11-13 10:19:32.360 W/AMessage(  467): failed to post message as target looper for handler 0 is gone.
+11-13 10:19:32.411 D/ActivityManager(  519): freezing 2106 com.google.android.as.oss
+11-13 10:19:32.417 D/ProfileInstaller( 6041): Skipping profile installation for com.killswitch.tally
+11-13 10:19:32.418 D/audioserver(  397): FGS Logger Transaction failed
+11-13 10:19:32.418 D/audioserver(  397): -129
+11-13 10:19:32.430 D/audioserver(  397): FGS Logger Transaction failed
+11-13 10:19:32.430 D/audioserver(  397): -129
+11-13 10:19:35.286 D/android.hardware.audio@7.1-impl.ranchu(  341): threadLoop: entering standby, frames: 970496
+11-13 10:19:35.596 D/BufferPoolAccessor2.0(  467): evictor expired: 1, evicted: 0
+11-13 10:19:35.827 D/BtGatt.ScanManager( 1008): uid 10131 isForeground true scanMode -1
+11-13 10:19:35.827 D/BtGatt.ScanManager( 1008): uid 10131 isForeground true scanMode -1
+11-13 10:19:37.299 D/ActivityManager(  519): freezing 4278 com.google.android.apps.messaging
+11-13 10:19:37.461 D/ConnectivityService(  519): releasing NetworkRequest [ REQUEST id=118, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&NOT_VCN_MANAGED Uid: 10132 RequestorUid: 10132 RequestorPkg: com.google.android.googlequicksearchbox UnderlyingNetworks: Null] ] (release request)
+11-13 10:19:37.462 I/ConnectivityService(  519): Update capabilities for net 100 : -FOREGROUND
+11-13 10:19:37.465 I/netd    (  335): networkSetPermissionForNetwork(100, 1) <2.90ms>
+11-13 10:19:37.596 D/BufferPoolAccessor2.0(  467): bufferpool2 0x761cd8665a98 : 0(0 size) total buffers - 0(0 size) used buffers - 93/101 (recycle/alloc) - 8/198 (fetch/transfer)
+11-13 10:19:37.596 D/BufferPoolAccessor2.0(  467): evictor expired: 1, evicted: 1
+11-13 10:19:37.596 D/BufferPoolAccessor2.0(  475): bufferpool2 0x7a75b85e63d8 : 0(0 size) total buffers - 0(0 size) used buffers - 94/97 (recycle/alloc) - 3/96 (fetch/transfer)
+11-13 10:19:37.596 D/BufferPoolAccessor2.0(  475): evictor expired: 1, evicted: 1
+11-13 10:19:37.856 D/StatusBarIconController(  826): ignoring old pipeline callbacks, because the new mobile icons are enabled
+11-13 10:19:38.477 W/healthd (    0): battery l=100 v=5000 t=25.0 h=2 st=2 c=900000 fc=3000000 cc=10 chg=a
+11-13 10:19:38.306 D/OomAdjuster(  519): Not killing cached processes
+11-13 10:19:38.330 D/ActivityManager(  519): freezing 1508 com.google.android.apps.wellbeing
+11-13 10:19:39.511 D/ActivityManager(  519): freezing 828 com.google.android.permissioncontroller
+11-13 10:19:40.141 W/BpBinder( 6091): Linking to death on android.gui.ISurfaceComposer but there are no threads (yet?) listening to incoming transactions. See ProcessState::startThreadPool and ProcessState::setThreadPoolMaxThreadCount. Generally you should setup the binder threadpool before other initialization steps.
+11-13 10:19:40.141 W/ProcessState( 6091): Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+11-13 10:19:40.148 I/hwservicemanager(  134): getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+11-13 10:19:40.148 I/Gralloc4( 6091): mapper 4.x is not supported
+11-13 10:19:40.333 I/servicemanager(    0): Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest.
+11-13 10:19:40.526 I/logd    (    0): logdr: UID=0 GID=0 PID=6095 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+11-13 10:19:40.535 I/logd    (    0): logdr: UID=0 GID=0 PID=6098 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+11-13 10:19:40.544 I/logd    (    0): logdr: UID=0 GID=0 PID=6101 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns
